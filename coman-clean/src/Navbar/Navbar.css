@@ -1,0 +1,27 @@
+.navbar {
+    background-color: blue;
+    padding: 10px;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar-item {
+    margin: 0 15px;
+  }
+  
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-link:hover {
+    color: lightblue;
+  }
+  
+  .navbar-link:active {
+    color: darkblue;
+  }
