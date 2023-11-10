@@ -1,23 +1,29 @@
 import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel CSS
 import './Homepage.css';
 
 // Coman facility services
 
 const Homepage = () => {
   return (
-    <div className='home-container'>
-      <div className='big-text'>
-        <h1>Big Centered Text</h1>
+      <div>
+          <section className="hero">
+              <h1>Your Space, Sparkling Clean!</h1>
+          </section>
+          <section className="project-carousel">
+              <Carousel autoPlay interval={3000} infiniteLoop useKeyboardArrows>
+                  {/* Add your project images here */}
+                  <div>
+                      <img src="/path-to-your-image1.jpg" alt="Project 1" />
+                  </div>
+                  <div>
+                      <img src="/path-to-your-image2.jpg" alt="Project 2" />
+                  </div>
+                  {/* Add as many as you like */}
+              </Carousel>
+          </section>
       </div>
-      <div className='small-text'>
-        <p>Smaller Text</p>
-      </div>
-      <div className='pictures'>
-        <img src='image1.jpg' alt='Image 1' />
-        <img src='image2.jpg' alt='Image 2' />
-        <img src='image3.jpg' alt='Image 3' />
-      </div>
-    </div>
   );
 };
 

@@ -1,27 +1,39 @@
 .navbar {
-    background-color: blue;
-    padding: 10px;
-  }
-  
-  .navbar-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .navbar-item {
-    margin: 0 15px;
-  }
-  
-  .navbar-link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .navbar-link:hover {
-    color: lightblue;
-  }
-  
-  .navbar-link:active {
-    color: darkblue;
-  }
+  position: absolute; /* Position it absolutely */
+  width: 100%; /* Ensure it spans the entire width */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* High z-index to keep it on top */
+  background-color: #2a9d8f; /* A more sophisticated color */
+  padding: 10px 20px; /* Added horizontal padding for better spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adding some shadow for depth */
+  transition: padding 0.3s ease-in-out; /* Transition for smooth padding change */
+}
+
+.navbar:hover {
+  padding: 30px 20px; /* Increased padding on hover */
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Centering the items */
+}
+
+.navbar-item {
+  margin: 0 15px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px; /* Adding padding to make it look like a button */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and active states */
+}
+
+.navbar-link:hover, .navbar-link:active {
+  background-color: white; /* Change background to white */
+  color: #2a9d8f; /* Text color to the original navbar color */
+  border-radius: 5px;
+}

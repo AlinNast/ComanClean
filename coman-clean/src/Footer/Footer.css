@@ -1,0 +1,39 @@
+.footer {
+  background-color: #2a9d8f;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Fixed position */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Ensures the footer stretches across the full width of the viewport */
+}
+  
+  .footer p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-links li {
+    margin: 0 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #f4f4f4;
+  }
+  

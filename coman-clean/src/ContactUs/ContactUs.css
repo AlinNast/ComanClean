@@ -1,0 +1,44 @@
+body {
+    padding-top: 10em; /* Adjust this value based on your navbar's height */
+  }
+  
+
+.contact-container {
+    background-color: #2a9d8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: auto;
+    margin: 0 auto;
+  }
+  
+  .contact-image {
+    width: 100%;
+    max-width: 1000px;
+    height: 700px;
+    background-image: url('../../public/contactuspageimg.png'); /* URL to your image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image in the div */
+    border-radius: 10px;
+  }
+  
+  .contact-details {
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+  }
+  
+  .contact-details h2 {
+    font-size: 2.5rem;
+    color: #2a9d8f;
+  }
+  
+  /* Adjust below styles as needed */
+  .contact-details p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
