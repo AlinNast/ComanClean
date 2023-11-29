@@ -4,8 +4,8 @@
   top: 0;
   left: 0;
   z-index: 1000; /* High z-index to keep it on top */
-  background-color: #2a9d8f; /* A more sophisticated color */
-  padding: 10px 20px; /* Added horizontal padding for better spacing */
+  background-color:  #37AFA9; /* A more sophisticated color */
+  padding: 10px 0px; /* Added horizontal padding for better spacing */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adding some shadow for depth */
   transition: padding 0.3s ease-in-out; /* Transition for smooth padding change */
 }
@@ -34,6 +34,6 @@
 
 .navbar-link:hover, .navbar-link:active {
   background-color: white; /* Change background to white */
-  color: #2a9d8f; /* Text color to the original navbar color */
+  color: #37AFA9; /* Text color to the original navbar color */
   border-radius: 5px;
 }

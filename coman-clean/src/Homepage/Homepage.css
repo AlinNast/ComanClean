@@ -1,21 +1,39 @@
+
+
+/* Primary Color: #37AFA9
+Secondary Color: #F0E6D2
+Text Color: #345B63
+Background Color: #FFFFFF or #F7F7F7
+Accent Color: #2D8282
+Error Message Color: #E63946 */
+
 body {
-  padding-top: 60px; /* Adjust this value based on your navbar's height */
-}
+  padding-top: 60px;
+  padding-bottom: 60px; /* Adjust this value to match your footer's height */}
 
 .hero {
+  text-align: center; /* Center aligns all content within the hero section */
+
   background-image: url('../../public/comanfacilityhero.webp'); /* Add your hero image path */
   height: 60vh;
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column; /* Align items vertically */
   justify-content: center;
   align-items: center;
+}
+
+.hero div {
+  width: 100%; /* Ensures the div takes full width of the hero section */
+  margin-top: 20px; /* Adds space between the text and the button */
 }
 
 .hero h1 {
   color: white;
   font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
 .project-carousel {
@@ -24,4 +42,23 @@ body {
   background-color: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-button {
+  background-color: #2a9d8f; /* Button background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding for size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Cursor to pointer */
+  transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+  display: block; /* To enable margin auto for centering */
+  margin: 0 auto; /* Center the button in the div */
+}
+
+.contact-form-button:hover {
+  background-color: #237b6b; /* Darker shade on hover */
+  color: #f4f4f4; /* Lighter text color on hover */
 }

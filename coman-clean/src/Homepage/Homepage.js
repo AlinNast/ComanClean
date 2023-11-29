@@ -19,13 +19,12 @@ const Homepage = () => {
       <div>
           <section className="hero">
               <h1>Your Space, Sparkling Clean!</h1>
-            <h2>
-                <div>
-                    <br/>
-                    <button onClick={toggleModal}>butonul</button>
+            
+            <div>
+                    
+                    <button className="contact-form-button" onClick={toggleModal}>butonul</button>
             {isModalOpen && <FormModal toggleModal={setIsModalOpen} />}
                 </div>
-            </h2>
           </section>
           <section className="project-carousel">
               <Carousel autoPlay interval={3000} infiniteLoop useKeyboardArrows>

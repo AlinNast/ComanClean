@@ -1,13 +1,13 @@
 .footer {
-  background-color: #2a9d8f;
+  background-color: #37AFA9;
   color: white;
   text-align: center;
   padding: 20px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  position: fixed; /* Fixed position */
+  position: fixed; /* Changed to fixed position */
   left: 0;
   bottom: 0;
-  width: 100%; /* Ensures the footer stretches across the full width of the viewport */
+  width: 100%;
 }
   
   .footer p {
