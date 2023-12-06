@@ -1,0 +1,21 @@
+.service-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.services-list .service {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.service h2 {
+    color: #333;
+}
+
+.service p {
+    color: #666;
+}
+
+/* Add more CSS here as needed */
