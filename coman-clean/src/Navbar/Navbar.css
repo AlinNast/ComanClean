@@ -1,6 +1,10 @@
 .navbar {
+  display: flex;
+  justify-content: space-between; /* This will place items on the ends */
+  align-items: center; /* Align items vertically */
   position: absolute; /* Position it absolutely */
   width: 100%; /* Ensure it spans the entire width */
+  max-height: 6rem;
   top: 0;
   left: 0;
   z-index: 1000; /* High z-index to keep it on top */
@@ -10,18 +14,39 @@
   transition: padding 0.3s ease-in-out; /* Transition for smooth padding change */
 }
 
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left{
+  width: 50px;
+  height: 50px;
+}
+
 .navbar:hover {
-  padding: 30px 20px; /* Increased padding on hover */
+  padding: 30px 0px; /* Increased padding on hover */
 }
 
 .navbar-list {
   list-style: none;
   display: flex;
-  justify-content: center; /* Centering the items */
 }
 
 .navbar-item {
   margin: 0 15px;
+}
+
+.navbar-logo {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  width: 9rem; /* Width of the logo */
+  height: auto; /* Height of the navbar */
+  background-size: contain; /* Make sure the logo fits inside the dimensions */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the logo */
+  transition: all 0.3s ease-in-out;
+  
 }
 
 .navbar-link {

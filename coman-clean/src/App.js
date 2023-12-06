@@ -5,8 +5,9 @@ import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
 import ContactUs from './ContactUs/ContactUs';
 import ServicePage from './ServicePage/ServicePage';
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
+import TermsAndConditions from './TermsOfService/TermsAndConditions';
 
-const PrivacyPolicy = () => <div><h1>Privacy Policy</h1></div>;
 const AboutUs = () => <div><h1>About Us</h1></div>;
 
 
@@ -22,6 +23,9 @@ function App() {
         <Route path='/about-us' element={<AboutUs />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path="/services" element={<ServicePage/> } />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions/>} />
+          
       </Routes>
       <Footer />
     </Router>

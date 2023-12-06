@@ -1,7 +1,7 @@
 import React from 'react';
-import './PrivacyPolicyPage.css';
+import './PrivacyPolicy.css';
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicy = () => {
     return (
         <div className="privacy-policy-page">
             <h1>Privacy Policy</h1>
@@ -14,4 +14,4 @@ const PrivacyPolicyPage = () => {
     );
 }
 
-export default PrivacyPolicyPage;
+export default PrivacyPolicy;
