@@ -1,39 +1,30 @@
+/* Style for the main content container (not part of the footer but necessary) */
+
+/* Style for the footer */
 .footer {
-  background-color: #37AFA9;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  position: fixed; /* Changed to fixed position */
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  min-height: 10vh; /* Minimum height to take full viewport height */
+
+  position: relative; /* Position the footer at the bottom of the container */
+  bottom: 0; /* Align to the bottom */
+  width: 100%; /* Full width */
+  background-color: #37AFA9; /* Background color of the footer */
+  color: white; /* Text color */
+  text-align: center; /* Center align text */
 }
-  
-  .footer p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer-links li {
-    margin: 0 10px;
-  }
-  
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-links a:hover {
-    color: #f4f4f4;
-  }
-  
+
+.footer-links {
+  list-style: none; /* Remove bullet points from the list */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Display list items in a row */
+  justify-content: center; /* Center list items */
+  align-items: center; /* Align items vertically */
+}
+
+.footer-links li {
+  margin: 0 10px; /* Space between list items */
+}
+
+.footer-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}

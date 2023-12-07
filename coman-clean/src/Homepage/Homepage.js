@@ -4,6 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel CSS
 import './Homepage.css';
 import FormModal from '../FormModal/FormModal'
+import Before1 from './Images/Before1.jpg'
+import After1 from './Images/After1.jpg'
 
 // Coman facility services
 
@@ -11,7 +13,6 @@ const Homepage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleModal = () => {
-        console.log("im here");
         setIsModalOpen(!isModalOpen);
         };
 
@@ -20,22 +21,27 @@ const Homepage = () => {
           <section className="hero">
               <h1>Your Space, Sparkling Clean!</h1>
             
-            <div>
+                <div>
                     
-                    <button className="contact-form-button" onClick={toggleModal}>butonul</button>
-            {isModalOpen && <FormModal toggleModal={setIsModalOpen} />}
+                    <button className="contact-form-button" onClick={toggleModal}>Make a Booking</button>
+                    {isModalOpen && <FormModal toggleModal={setIsModalOpen} />}
                 </div>
           </section>
           <section className="project-carousel">
-              <Carousel autoPlay interval={3000} infiniteLoop useKeyboardArrows>
-                  {/* Add your project images here */}
-                  <div>
-                      <img src="/path-to-your-image1.jpg" alt="Project 1" />
-                  </div>
-                  <div>
-                      <img src="/path-to-your-image2.jpg" alt="Project 2" />
-                  </div>
-                  {/* Add as many as you like */}
+            <h2>Our Projects</h2>
+              <Carousel autoPlay interval={10000} infiniteLoop useKeyboardArrows>
+                    <div className="carousel-item">
+                        <img src={Before1} alt="Before Project 1" className="before"/>
+                        <img src={After1} alt="After Project 1" className="after"/>
+                    </div>
+                    <div className="carousel-item">
+                        <img src={Before1} alt="Before Project 1" className="before"/>
+                        <img src={After1} alt="After Project 1" className="after"/>
+                    </div>
+                    <div className="carousel-item">
+                        <img src={Before1} alt="Before Project 1" className="before"/>
+                        <img src={After1} alt="After Project 1" className="after"/>
+                    </div>
               </Carousel>
           </section>
       </div>

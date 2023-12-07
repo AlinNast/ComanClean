@@ -39,9 +39,59 @@ body {
 .project-carousel {
   margin: 20px;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: #2D8282;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: fit-content;
+  width: auto;
+}
+
+.carousel-item {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  margin: 0 auto; /* Centering the carousel item */
+}
+
+.project-carousel h2 {
+  color: #F0E6D2;
+  margin-bottom: 20px;
+}
+
+.carousel-item .before,
+.carousel-item .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.project-carousel .control-dots {
+  display: none; /* Hides the dots */
+}
+
+.project-carousel .thumbs {
+  display: none; /* Hides the thumbnails */
+}
+
+.carousel-item .before {
+  opacity: 1;
+}
+
+.carousel-item .after {
+  opacity: 0;
+}
+
+.carousel-item:hover .before {
+  opacity: 0;
+}
+
+.carousel-item:hover .after {
+  opacity: 1;
 }
 
 .contact-form-button {
