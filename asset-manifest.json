@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/ComanClean/static/css/main.b7a823c7.css",
+    "main.js": "/ComanClean/static/js/main.60a8e72b.js",
+    "static/media/contactuspageimg.png": "/ComanClean/static/media/contactuspageimg.2672ec084582d710cb04.png",
+    "static/media/Before1.jpg": "/ComanClean/static/media/Before1.0717605bfde3e5c4c786.jpg",
+    "static/media/After1.jpg": "/ComanClean/static/media/After1.5a539f86e73a62004712.jpg",
+    "static/media/comanfacilityhero.webp": "/ComanClean/static/media/comanfacilityhero.86d0d01eb8e05bb062fa.webp",
+    "static/media/logobig.png": "/ComanClean/static/media/logobig.9c623c7cfe1c4da17465.png",
+    "static/media/logosmall.png": "/ComanClean/static/media/logosmall.759252e2416eecdad31e.png",
+    "index.html": "/ComanClean/index.html",
+    "main.b7a823c7.css.map": "/ComanClean/static/css/main.b7a823c7.css.map",
+    "main.60a8e72b.js.map": "/ComanClean/static/js/main.60a8e72b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7a823c7.css",
+    "static/js/main.60a8e72b.js"
+  ]
+}
