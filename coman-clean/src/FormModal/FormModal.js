@@ -14,7 +14,6 @@ const FormModal = ( {toggleModal} ) => {
     });
 
     const handleToggle = () => {
-        console.log("im here", toggleModal);
         
         toggleModal(false);
     };
@@ -57,6 +56,20 @@ const FormModal = ( {toggleModal} ) => {
                         <label htmlFor="message">Message:</label>
                         <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
 
+                        <div className="checkbox-group">
+                            <div>
+                                <input type="checkbox" id="cleaning" name="serviceType" value="Cleaning" onChange={handleChange} />
+                                <label htmlFor="cleaning">Cleaning</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="renovation" name="serviceType" value="Renovation" onChange={handleChange} />
+                                <label htmlFor="renovation">Renovation</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="other" name="serviceType" value="Other" onChange={handleChange} />
+                                <label htmlFor="other">Other</label>
+                            </div>
+                        </div>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>

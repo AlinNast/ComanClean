@@ -24,7 +24,7 @@ function App() {
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path="/services" element={<ServicePage/> } />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions/>} />
+        <Route path="/terms-of-service" element={<TermsAndConditions/>} />
           
       </Routes>
       <Footer />
