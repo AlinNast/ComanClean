@@ -12,40 +12,62 @@
             background-color: #f4f7f9;
         }
         .header {
-            background-color: #00534E; /* Primary Blue */
+            background-color: #00534E; /* Sri Lanka */
             color: white;
             padding: 20px;
             text-align: center;
         }
         .search-container {
-            max-width: 600px;
-            margin: 40px auto; /* Centers the container and adds vertical spacing */
-            padding: 20px;
+            /* Now uses a grid for better layout of multiple fields */
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 15px; /* Increased gap for better spacing */
+            max-width: 900px; /* Wider container for more fields */
+            margin: 40px auto;
+            padding: 30px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex; /* Enables flexible layout for the search bar elements */
-            gap: 10px; /* Space between the search bar and button */
         }
-        .search-input {
-            flex-grow: 1; /* Allows the input to take up most of the space */
-            padding: 10px;
-            border: 1px solid #ccc;
+        .search-container label {
+            font-weight: bold;
+            display: block; /* Ensures label is above input */
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .search-input, .search-button {
+            width: 100%; /* Ensures inputs take full grid column width */
+            box-sizing: border-box; /* Includes padding and border in element's total width/height */
+        }
+        .results-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            min-height: 50px; /* Ensures it's visible even when empty */
+            background-color: #e9ecef; /* Light gray background for contrast */
+            border: 1px dashed #ccc;
             border-radius: 4px;
-            font-size: 16px;
         }
-        .search-button {
-            padding: 10px 20px;
-            background-color: #28a745; /* Green for action */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+        .results-container h3 {
+            margin-top: 0;
+            color: #007bff;
         }
-        .search-button:hover {
-            background-color: #218838;
+        .checkbox-container {
+            /* Full width for the checkbox container */
+            grid-column: 1 / -1; 
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+        /* Style for the checkbox itself */
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            width: initial; /* Override 100% width from .search-input */
+            height: initial;
+        }
+        /* Utility class to hide elements */
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -55,17 +77,102 @@
         <h1>Welcome to Paradise Resorts</h1>
     </header>
 
-    <div class="search-container">
-        <input type="text" class="search-input" name="destination" placeholder="Where would you like to go? (e.g., Maui, Bali, or Resort Name)">
+    <form class="search-container" method="POST" action="/">
         
-        <button class="search-button">
-            Search & Book
-        </button>
+        <div>
+            <label for="arrival_loc">Arrival Airport</label>
+            <input type="text" id="arrival_loc" name="arrival_location" class="search-input" placeholder="e.g., LIS" required>
+        </div>
+
+        <div>
+            <label for="destination">Destination</label>
+            <input type="text" id="destination_loc" name="destination" class="search-input" placeholder="e.g., FRA" required>
+        </div>
+
+        <div>
+            <label for="num_people">Guests</label>
+            <input type="number" id="num_people" name="num_people" class="search-input" min="1" value="1" required>
+        </div>
+        
+        <div>
+            <label for="arrival_date">Arrival Date</label>
+            <input type="date" id="arrival_date" name="arrival_date" class="search-input" required>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="one_way_toggle" name="one_way" value="true">
+            <label for="one_way_toggle">One-way Transfer (No return trip)</label>
+        </div>
+
+        <div id="return-date-field">
+            <label for="return_date">Return Date</label>
+            <input type="date" id="return_date" name="return_date" class="search-input" required>
+        </div>
+        
+        <div style="grid-column: 1 / -1; text-align: center; padding-top: 10px;">
+            <button type="submit" class="search-button">
+                Start Search
+            </button>
+        </div>
+    </form>
+
+    <div class="results-container">
+        {% if search_data %}
+            <h3>Your Search Parameters:</h3>
+            <p>
+                **Arrival:** {{ search_data.arrival_location }} on {{ search_data.arrival_date }}
+            </p>
+            <p>
+                **Destination:** {{ search_data.destination }}
+            </p>
+            {% if search_data.one_way %}
+                <p>
+                    **Transfer Type:** One-way
+                </p>
+            {% else %}
+                <p>
+                    **Return Date:** {{ search_data.return_date }}
+                </p>
+            {% endif %}
+            <p>
+                **Guests:** {{ search_data.num_people }}
+            </p>
+        {% else %}
+            <p>Fill in the form and click 'Start Search' to see your parameters appear here.</p>
+        {% endif %}
     </div>
 
     <p style="text-align: center; margin-top: 20px; color: #6c757d;">
         More content will go here: featured resorts, user testimonials, etc.
     </p>
+
+    <script>
+        // Get references to the elements we need to manipulate
+        const toggle = document.getElementById('one_way_toggle');
+        const returnDateField = document.getElementById('return-date-field');
+        const returnDateInput = document.getElementById('return_date');
+
+        // Function to handle the visibility change
+        function handleOneWayToggle() {
+            // Check if the toggle is currently checked (is one-way)
+            if (toggle.checked) {
+                // If checked, hide the return date field and remove the 'required' attribute
+                returnDateField.classList.add('hidden');
+                returnDateInput.removeAttribute('required');
+            } else {
+                // If unchecked (is round trip), show the return date field and add 'required' back
+                returnDateField.classList.remove('hidden');
+                returnDateInput.setAttribute('required', 'required');
+            }
+        }
+
+        // 1. Attach the function to the 'change' event of the checkbox
+        toggle.addEventListener('change', handleOneWayToggle);
+
+        // 2. Call the function once when the page loads 
+        // This ensures the correct initial state if the checkbox is pre-checked (e.g., after form submission errors)
+        document.addEventListener('DOMContentLoaded', handleOneWayToggle);
+    </script>
 
 </body>
 </html>
